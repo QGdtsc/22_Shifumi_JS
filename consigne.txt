@@ -1,0 +1,5 @@
+Shifumi classique avec un compteur. Ainsi qu'un timeout avant d'afficher le résultat.
+
+
+
+
