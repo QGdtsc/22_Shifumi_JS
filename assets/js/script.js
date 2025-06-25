@@ -4,6 +4,8 @@ let winner = ''
 let counter_user = 0
 let counter_opponent = 0
 let button_accessibility = true
+let audio_bravo = new Audio('assets/song/bravo.mp3')
+let audio_bouhhhh = new Audio('assets/song/bouhhh.mp3')
 
 
 function startGame() {
@@ -61,19 +63,19 @@ function getChoice(choice) {
     switch (userChoice) {
         case 'fist':
             html_element = "<button class='btn border border-1 aspect-square rounded-md bg-purple-300 w-[35vw] lg:w-[8vw] flex justify-center items-center'><img class='w-4/5 h-4/5' src='assets/icons/hand-back-fist-regular.svg' alt='image de poing'></button>"
-            break;
+            break
         case 'palm':
             html_element = "<button class='btn border border-1 aspect-square rounded-md bg-purple-300 w-[35vw] lg:w-[8vw] flex justify-center items-center'><img class='w-4/5 h-4/5' src='assets/icons/hand-regular.svg' alt='image de main'></button>"
-            break;
+            break
         case "scissors":
             html_element = "<button class='btn border border-1 aspect-square rounded-md bg-purple-300 w-[35vw] lg:w-[8vw] flex justify-center items-center'><img class='w-4/5 h-4/5' src='assets/icons/hand-scissors-regular.svg' alt='image de ciseaux'></button>"
-            break;
+            break
         // default:
-        //     break;
+        //     break
     }
     document.getElementById('screen_user').innerText = userChoice
     document.getElementById('screen_user').innerHTML = html_element
-    opponentChoice, html_element_opponent = getRandomChoiceOpponent();
+    opponentChoice, html_element_opponent = getRandomChoiceOpponent()
     message = comparisonElement(userChoice, opponentChoice)
     document.getElementById('message_result').innerText = 'Waiting for opponent'
     document.getElementById('message_result').style.backgroundColor = 'oklch(95.4% 0.038 75.164)'
@@ -82,7 +84,7 @@ function getChoice(choice) {
     switchAccessibilityButtons()
     setTimeout(() => {
         displayOpponentChoiceAndStatus(html_element_opponent, message, counter_user, counter_opponent)
-    }, 500);
+    }, 500)
 }
 
 
@@ -102,26 +104,31 @@ function colorizeStatus(status) {
             document.getElementById('message_result').style.backgroundColor = 'green'
             document.getElementById('message_result').style.color = 'white'
             document.getElementById('message_result').style.borderTop = '3px solid oklch(27.9% 0.077 45.635)'
-            break;
+            incrementScoreUser()
+            // audio_bravo.play()
+            break
         case 'DEFEAT':
             document.getElementById('message_result').style.backgroundColor = 'red'
             document.getElementById('message_result').style.color = 'white'
             document.getElementById('message_result').style.borderTop = '3px solid oklch(27.9% 0.077 45.635)'
-            break;
+            incrementScoreOpponent()
+            // audio_bouhhhh.play()
+            break
         // case 'EQUALITY':
         //     document.getElementById('message_result').style.backgroundColor = 'oklch(95.4% 0.038 75.164)'
         //     document.getElementById('message_result').style.color = 'oklch(27.9% 0.077 45.635)'
-        //     break;
+        //     break
         default:
             document.getElementById('message_result').style.backgroundColor = 'oklch(95.4% 0.038 75.164)'
             document.getElementById('message_result').style.color = 'oklch(27.9% 0.077 45.635)'
-            break;
+            break
     }
 }
 
 
+
 // function getRandomInt(max) {
-//     return Math.floor(Math.random() * max);
+//     return Math.floor(Math.random() * max)
 // }
 getRandomInt = (max) => Math.floor(Math.random() * max)
 function getRandomChoiceOpponent() {
@@ -131,17 +138,17 @@ function getRandomChoiceOpponent() {
         case 0:
             opponentChoice = "fist"
             html_element = "<button class='btn border border-1 aspect-square rounded-md bg-red-300 w-[35vw] lg:w-[8vw] flex justify-center items-center'><img class='w-4/5 h-4/5' src='assets/icons/hand-back-fist-regular.svg' alt='image de poing'></button>"
-            break;
+            break
         case 1:
             opponentChoice = "palm"
             html_element = "<button class='btn border border-1 aspect-square rounded-md bg-red-300 w-[35vw] lg:w-[8vw] flex justify-center items-center'><img class='w-4/5 h-4/5' src='assets/icons/hand-regular.svg' alt='image de main'></button>"
-            break;
+            break
         case 2:
             opponentChoice = "scissors"
             html_element = "<button class='btn border border-1 aspect-square rounded-md bg-red-300 w-[35vw] lg:w-[8vw] flex justify-center items-center'><img class='w-4/5 h-4/5' src='assets/icons/hand-scissors-regular.svg' alt='image de ciseaux'></button>"
-            break;
+            break
         default:
-            break;
+            break
     }
     // document.getElementById('screen_opponent').innerText = opponentChoice
     // document.getElementById('screen_opponent').innerHTML = html_element
@@ -157,19 +164,19 @@ function comparisonElement(userChoice, opponentChoice) {
             if (opponentChoice == 'fist') { winner = 'equality' }
             if (opponentChoice == 'palm') { winner = 'opponent' }
             if (opponentChoice == 'scissors') { winner = 'user' }
-            break;
+            break
         case 'palm':
             if (opponentChoice == 'fist') { winner = 'user' }
             if (opponentChoice == 'palm') { winner = 'equality' }
             if (opponentChoice == 'scissors') { winner = 'opponent' }
-            break;
+            break
         case 'scissors':
             if (opponentChoice == 'fist') { winner = 'opponent' }
             if (opponentChoice == 'palm') { winner = 'user' }
             if (opponentChoice == 'scissors') { winner = 'equality' }
-            break;
+            break
         default:
-            break;
+            break
     }
     if (winner == 'user') {
         counter_user += 1
@@ -181,4 +188,51 @@ function comparisonElement(userChoice, opponentChoice) {
         message = 'EQUALITY'
     }
     return message
+}
+
+
+
+
+
+function incrementScoreUser() {
+  const plusOne = document.getElementById("plus_one_user");
+
+  // Réinitialiser
+  plusOne.style.transition = "none";
+  plusOne.style.opacity = "0";
+  plusOne.style.transform = "translateY(0)";
+  void plusOne.offsetWidth;
+
+  // Lancer l’animation
+  plusOne.style.transition = "transform 0.5s ease-out, opacity 0.5s ease-out";
+  plusOne.style.opacity = "1";
+  plusOne.style.transform = "translateY(-20px)";
+
+  // Réinitialiser après
+  setTimeout(() => {
+    plusOne.style.opacity = "0";
+    // plusOne.style.transform = "translateY(0)";
+  }, 500);
+}
+
+
+function incrementScoreOpponent() {
+  const plusOne = document.getElementById("plus_one_opponent");
+
+  // Réinitialiser
+  plusOne.style.transition = "none";
+  plusOne.style.opacity = "0";
+  plusOne.style.transform = "translateY(0)";
+  void plusOne.offsetWidth;
+
+  // Lancer l’animation
+  plusOne.style.transition = "transform 0.5s ease-out, opacity 0.5s ease-out";
+  plusOne.style.opacity = "1";
+  plusOne.style.transform = "translateY(-20px)";
+
+  // Réinitialiser après
+  setTimeout(() => {
+    plusOne.style.opacity = "0";
+    // plusOne.style.transform = "translateY(0)";
+  }, 500);
 }

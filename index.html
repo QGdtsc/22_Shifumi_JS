@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>Document</title>
 </head>
 
@@ -38,12 +39,26 @@
                     id="after_start_1">
                     <div class="flex flex-col justify-around items-center">
                         <div class="text-3xl text-amber-950 font-bold">YOU</div>
-                        <div class="text-3xl text-amber-950 font-bold" id="score_user">0</div>
+                        <div class="text-3xl text-amber-950 font-bold">
+                            <div class="relative overflow-visible h-10">
+                                <span id="score_user">0</span>
+                                <span id="plus_one_user">+1</span>
+                            </div>
+                            <!-- <span id="score_user">0</span>
+                            <span id="plus_one_user">+1</span> -->
+                        </div>
+                        <!-- <div class="text-3xl text-amber-950 font-bold" id="score_user"></div> -->
                         <div class="flex justify-center items-center h-[10vh]" id="screen_user"></div>
                     </div>
                     <div class="flex flex-col justify-around items-center">
                         <div class="text-3xl text-amber-950 font-bold">OPPONENT</div>
-                        <div class="text-3xl text-amber-950 font-bold" id="score_opponent">0</div>
+                        <div class="text-3xl text-amber-950 font-bold">
+                            <div class="relative overflow-visible h-10">
+                                <span id="score_opponent">0</span>
+                                <span id="plus_one_opponent">+1</span>
+                            </div>
+                        </div>
+                        <!-- <div class="text-3xl text-amber-950 font-bold" id="score_opponent">0</div> -->
                         <div class="flex justify-center items-center h-[10vh]" id="screen_opponent"></div>
                     </div>
                 </div>

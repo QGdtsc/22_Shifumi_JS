@@ -1,0 +1,33 @@
+#plus_one_user {
+    position: absolute;
+    left: 0%;
+    top: -50%;
+    /* transform: translate(-50%, -50%); */
+    opacity: 0;
+    /* z-index: 9999; */
+    color: green;
+    font-weight: bold;
+    /* padding: 0.25rem 0.5rem; */
+    /* line-height: 1; */
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+#plus_one_opponent {
+    position: absolute;
+    left: 0%;
+    top: -50%;
+    opacity: 0;
+    color: rgb(158, 10, 22);
+    font-weight: bold;
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+/* .animate {
+    transform: translateY(-20px);
+    opacity: 1;
+} */
+
+/* .animate {
+  transform: translate(-50%, -90%) scale(1.2);
+  opacity: 1;
+} */
