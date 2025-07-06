@@ -4,8 +4,6 @@ let winner = ''
 let counter_user = 0
 let counter_opponent = 0
 let button_accessibility = true
-let audio_bravo = new Audio('assets/song/bravo.mp3')
-let audio_bouhhhh = new Audio('assets/song/bouhhh.mp3')
 
 
 function startGame() {
@@ -34,7 +32,6 @@ function restartGame() {
 
 
 function switchAccessibilityButtons() {
-    // console.log(button_accessibility)
     button_accessibility == true ? disableButtons() : enableButtons()
 }
 function disableButtons() {
@@ -58,24 +55,22 @@ function enableButtons() {
 
 
 function getChoice(choice) {
-    // console.log('CLICK')
+    let html_element
     userChoice = choice
     switch (userChoice) {
         case 'fist':
-            html_element = "<button class='btn border border-1 aspect-square rounded-md bg-purple-300 w-[35vw] lg:w-[8vw] flex justify-center items-center'><img class='w-4/5 h-4/5' src='assets/icons/hand-back-fist-regular.svg' alt='image de poing'></button>"
+            html_element = "<button class='btn border border-1 aspect-square rounded-md bg-purple-300 w-[70%] flex justify-center items-center'><img class='w-4/5 h-4/5 rotate-90' src='assets/icons/hand-back-fist-regular.svg' alt='Rock'></button>"
             break
         case 'palm':
-            html_element = "<button class='btn border border-1 aspect-square rounded-md bg-purple-300 w-[35vw] lg:w-[8vw] flex justify-center items-center'><img class='w-4/5 h-4/5' src='assets/icons/hand-regular.svg' alt='image de main'></button>"
+            html_element = "<button class='btn border border-1 aspect-square rounded-md bg-purple-300 w-[70%] flex justify-center items-center'><img class='w-4/5 h-4/5 rotate-90' src='assets/icons/hand-regular.svg' alt='Paper'></button>"
             break
         case "scissors":
-            html_element = "<button class='btn border border-1 aspect-square rounded-md bg-purple-300 w-[35vw] lg:w-[8vw] flex justify-center items-center'><img class='w-4/5 h-4/5' src='assets/icons/hand-scissors-regular.svg' alt='image de ciseaux'></button>"
+            html_element = "<button class='btn border border-1 aspect-square rounded-md bg-purple-300 w-[70%] flex justify-center items-center'><img class='w-4/5 h-4/5 transform scale-x-[-1]' src='assets/icons/hand-scissors-regular.svg' alt='Scissors'></button>"
             break
-        // default:
-        //     break
     }
     document.getElementById('screen_user').innerText = userChoice
     document.getElementById('screen_user').innerHTML = html_element
-    opponentChoice, html_element_opponent = getRandomChoiceOpponent()
+    html_element_opponent = getRandomChoiceOpponent()
     message = comparisonElement(userChoice, opponentChoice)
     document.getElementById('message_result').innerText = 'Waiting for opponent'
     document.getElementById('message_result').style.backgroundColor = 'oklch(95.4% 0.038 75.164)'
@@ -104,21 +99,15 @@ function colorizeStatus(status) {
             document.getElementById('message_result').style.backgroundColor = 'green'
             document.getElementById('message_result').style.color = 'white'
             document.getElementById('message_result').style.borderTop = '3px solid oklch(27.9% 0.077 45.635)'
-            incrementScoreUser()
-            // audio_bravo.play()
+            incrementScoreAnimation('player')
             break
         case 'DEFEAT':
             document.getElementById('message_result').style.backgroundColor = 'red'
             document.getElementById('message_result').style.color = 'white'
             document.getElementById('message_result').style.borderTop = '3px solid oklch(27.9% 0.077 45.635)'
-            incrementScoreOpponent()
-            // audio_bouhhhh.play()
+            incrementScoreAnimation('opponent')
             break
-        // case 'EQUALITY':
-        //     document.getElementById('message_result').style.backgroundColor = 'oklch(95.4% 0.038 75.164)'
-        //     document.getElementById('message_result').style.color = 'oklch(27.9% 0.077 45.635)'
-        //     break
-        default:
+        default: // in case of equality
             document.getElementById('message_result').style.backgroundColor = 'oklch(95.4% 0.038 75.164)'
             document.getElementById('message_result').style.color = 'oklch(27.9% 0.077 45.635)'
             break
@@ -126,39 +115,31 @@ function colorizeStatus(status) {
 }
 
 
-
-// function getRandomInt(max) {
-//     return Math.floor(Math.random() * max)
-// }
-getRandomInt = (max) => Math.floor(Math.random() * max)
 function getRandomChoiceOpponent() {
+    let html_element
+    getRandomInt = (max) => Math.floor(Math.random() * max)
     let randomInt = getRandomInt(3)
-    // console.log(randomInt)
     switch (randomInt) {
         case 0:
             opponentChoice = "fist"
-            html_element = "<button class='btn border border-1 aspect-square rounded-md bg-red-300 w-[35vw] lg:w-[8vw] flex justify-center items-center'><img class='w-4/5 h-4/5' src='assets/icons/hand-back-fist-regular.svg' alt='image de poing'></button>"
+            html_element = "<button class='btn border border-1 aspect-square rounded-md bg-red-300 w-[70%] flex justify-center items-center'><img class='w-4/5 h-4/5 rotate-270 transform scale-x-[-1]' src='assets/icons/hand-back-fist-regular.svg' alt='Rock'></button>"
             break
         case 1:
             opponentChoice = "palm"
-            html_element = "<button class='btn border border-1 aspect-square rounded-md bg-red-300 w-[35vw] lg:w-[8vw] flex justify-center items-center'><img class='w-4/5 h-4/5' src='assets/icons/hand-regular.svg' alt='image de main'></button>"
+            html_element = "<button class='btn border border-1 aspect-square rounded-md bg-red-300 w-[70%] flex justify-center items-center'><img class='w-4/5 h-4/5 rotate-270 transform scale-x-[-1]' src='assets/icons/hand-regular.svg' alt='Paper'></button>"
             break
         case 2:
             opponentChoice = "scissors"
-            html_element = "<button class='btn border border-1 aspect-square rounded-md bg-red-300 w-[35vw] lg:w-[8vw] flex justify-center items-center'><img class='w-4/5 h-4/5' src='assets/icons/hand-scissors-regular.svg' alt='image de ciseaux'></button>"
+            html_element = "<button class='btn border border-1 aspect-square rounded-md bg-red-300 w-[70%] flex justify-center items-center'><img class='w-4/5 h-4/5' src='assets/icons/hand-scissors-regular.svg' alt='Scissors'></button>"
             break
         default:
             break
     }
-    // document.getElementById('screen_opponent').innerText = opponentChoice
-    // document.getElementById('screen_opponent').innerHTML = html_element
-    return opponentChoice, html_element
+    return html_element
 }
 
 
 function comparisonElement(userChoice, opponentChoice) {
-    // console.log(userChoice)
-    // console.log(opponentChoice)
     switch (userChoice) {
         case 'fist':
             if (opponentChoice == 'fist') { winner = 'equality' }
@@ -191,48 +172,25 @@ function comparisonElement(userChoice, opponentChoice) {
 }
 
 
-
-
-
-function incrementScoreUser() {
-  const plusOne = document.getElementById("plus_one_user");
-
-  // Réinitialiser
-  plusOne.style.transition = "none";
-  plusOne.style.opacity = "0";
-  plusOne.style.transform = "translateY(0)";
-  void plusOne.offsetWidth;
-
-  // Lancer l’animation
-  plusOne.style.transition = "transform 0.5s ease-out, opacity 0.5s ease-out";
-  plusOne.style.opacity = "1";
-  plusOne.style.transform = "translateY(-20px)";
-
-  // Réinitialiser après
-  setTimeout(() => {
+function incrementScoreAnimation(Player_or_Opponent) {
+    let plusOne
+    if (Player_or_Opponent == 'player') {
+        plusOne = document.getElementById("plus_one_user");
+    }
+    if (Player_or_Opponent == 'opponent') {
+        plusOne = document.getElementById("plus_one_opponent");
+    }
+    // reinitialise animation
+    plusOne.style.transition = "none";
     plusOne.style.opacity = "0";
-    // plusOne.style.transform = "translateY(0)";
-  }, 500);
-}
-
-
-function incrementScoreOpponent() {
-  const plusOne = document.getElementById("plus_one_opponent");
-
-  // Réinitialiser
-  plusOne.style.transition = "none";
-  plusOne.style.opacity = "0";
-  plusOne.style.transform = "translateY(0)";
-  void plusOne.offsetWidth;
-
-  // Lancer l’animation
-  plusOne.style.transition = "transform 0.5s ease-out, opacity 0.5s ease-out";
-  plusOne.style.opacity = "1";
-  plusOne.style.transform = "translateY(-20px)";
-
-  // Réinitialiser après
-  setTimeout(() => {
-    plusOne.style.opacity = "0";
-    // plusOne.style.transform = "translateY(0)";
-  }, 500);
+    plusOne.style.transform = "translateY(0)";
+    void plusOne.offsetWidth;
+    // launch animation
+    plusOne.style.transition = "transform 0.5s ease-out, opacity 0.5s ease-out";
+    plusOne.style.opacity = "1";
+    plusOne.style.transform = "translateY(-20px)";
+    // stop animation
+    setTimeout(() => {
+        plusOne.style.opacity = "0";
+    }, 500);
 }
