@@ -8,11 +8,13 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="h-screen w-full max-w-md box-border mx-auto bg-orange-100 border-[3px] overflow-x-hidden">
+    <div class="h-screen w-full max-w-md box-border mx-auto bg-orange-100 overflow-x-hidden">
+        <!-- border-[3px] -->
         <div class="grid grid-rows-[20%_50%_10%_20%] h-full">
             <!-- HEADER -->
-            <div class="flex flex-row justify-center items-center border-b-3 bg-yellow-400 text-4xl text-center text-amber-950 font-bold"
+            <div class="flex flex-row justify-center items-center bg-yellow-400 text-4xl text-center text-amber-950 font-bold"
                 onclick="restartGame()">
+                <!-- border-b-3 -->
                 Rock Paper Scissors
             </div>
             <!-- CURRENT GAME AND SCORE -->
@@ -20,12 +22,14 @@
                 <!-- Button Play to start a new game session -->
                 <div class="flex flex-row justify-center items-center h-full w-full" id="initial_start">
                     <button
-                        class="btn border border-2 aspect-square rounded-full w-[50%] bg-yellow-400 text-amber-950 text-5xl font-bold"
+                        class="btn aspect-square rounded-full w-[50%] bg-yellow-400 text-amber-950 text-5xl font-bold"
                         onclick="startGame()">PLAY</button>
+                        <!-- border border-2  -->
                 </div>
                 <!-- In Game -->
-                <div class="grid grid-cols-2 divide-x-2 divide-dashed divide-black-500 bg-orange-100 h-full w-full hidden"
+                <div class="grid grid-cols-2 bg-orange-100 h-full w-full hidden"
                     id="after_start_1">
+                    <!-- divide-x-2 divide-dashed divide-black-500  -->
                     <div class="flex flex-col justify-around items-center w-full">
                         <div class="text-3xl text-amber-950 font-bold">YOU</div>
                         <div class="text-3xl text-amber-950 font-bold">
@@ -50,14 +54,16 @@
             </div>
             <!-- RESULT MESSAGE -->
             <div>
-                <div class="h-full border-t-3 flex flex-row justify-center items-center text-center text-4xl text-amber-950 font-bold hidden"
+                <div class="h-full flex flex-row justify-center items-center text-center text-4xl text-amber-950 font-bold hidden"
                     id="message_result">
+                    <!-- border-t-3  -->
                 </div>
             </div>
             <!-- CHOICE SELECTION -->
             <div>
-                <div class="h-full border-t-3 flex flex-col items-center bg-orange-100 hidden "
+                <div class="h-full flex flex-col items-center bg-orange-100 hidden "
                     id="after_start_2">
+                    <!-- border-t-3  -->
 
                     <div class="h-[7vh] text-2xl flex flex-row justify-center items-center text-center text-amber-950 font-bold">
                         Rock, Paper or Scissors ?</div>
@@ -65,23 +71,26 @@
                     <div class="h-[13vh] flex flex-row justify-evenly w-full">
                         <div class="flex flex-row justify-center items-center w-full">
                             <button
-                                class="btn border border-1 aspect-square rounded-md bg-purple-300 w-[70%] flex justify-center items-center"
+                                class="btn aspect-square rounded-md bg-purple-300 w-[70%] flex justify-center items-center"
                                 id="buttonUserFist" title="Rock" onclick="getChoice('fist')">
+                                <!-- border border-1  -->
                                 <img class="w-[80%] h-[80%] rotate-90" src="assets/icons/hand-back-fist-regular.svg"
                                     alt="Rock">
                             </button>
                         </div>
                         <div class="flex flex-row justify-center items-center w-full">
                             <button
-                                class="btn border border-1 aspect-square rounded-md bg-purple-300 w-[70%] flex justify-center items-center"
+                                class="btn aspect-square rounded-md bg-purple-300 w-[70%] flex justify-center items-center"
                                 id="buttonUserPalm" title="Paper" onclick="getChoice('palm')">
+                                <!-- border border-1  -->
                                 <img class="w-[80%] h-[80%] rotate-90" src="assets/icons/hand-regular.svg" alt="Paper">
                             </button>
                         </div>
                         <div class="flex flex-row justify-center items-center w-full">
                             <button
-                                class="btn border border-1 aspect-square rounded-md bg-purple-300 w-[70%] flex justify-center items-center"
+                                class="btn aspect-square rounded-md bg-purple-300 w-[70%] flex justify-center items-center"
                                 id="buttonUserScissors" title="Scissors" onclick="getChoice('scissors')">
+                                <!-- border border-1  -->
                                 <img class="w-[80%] h-[80%] transform scale-x-[-1]" src="assets/icons/hand-scissors-regular.svg"
                                     alt="Scissors">
                             </button>
