@@ -7,16 +7,16 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Document</title>
 </head>
-<body class="m-0 p-0 overflow-x-hidden">
-    <div class="h-screen max-w-screen-sm mx-auto bg-orange-100 border-[3px] overflow-x-hidden">
+<body>
+    <div class="h-screen max-w-md mx-auto bg-orange-100 border-[3px] overflow-x-hidden">
         <div class="grid grid-rows-[20%_50%_10%_20%] h-full">
             <!-- HEADER -->
-            <div class="flex flex-row justify-center items-center border-b-3 bg-yellow-400 text-4xl text-center text-amber-950 font-bold"
+            <div class="flex flex-row justify-center items-center border-b-3 bg-yellow-400 text-4xl text-center text-amber-950 font-bold px-1"
                 onclick="restartGame()">
                 Rock Paper Scissors
             </div>
             <!-- CURRENT GAME AND SCORE -->
-            <div>
+            <div class=" px-1">
                 <!-- Button Play to start a new game session -->
                 <div class="flex flex-row justify-center items-center h-full w-full" id="initial_start">
                     <button
@@ -49,13 +49,13 @@
                 </div>
             </div>
             <!-- RESULT MESSAGE -->
-            <div>
+            <div class=" px-1">
                 <div class="h-full border-t-3 flex flex-row justify-center items-center text-center text-4xl text-amber-950 font-bold hidden"
                     id="message_result">
                 </div>
             </div>
             <!-- CHOICE SELECTION -->
-            <div>
+            <div class=" px-1">
                 <div class="h-full border-t-3 flex flex-col items-center bg-orange-100 hidden "
                     id="after_start_2">
 
