@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="h-screen max-w-screen-sm box-border mx-auto bg-orange-100 border-[3px] overflow-x-hidden">
+    <div class="h-screen max-w-screen-sm mx-auto bg-orange-100 border-[3px] overflow-x-hidden">
         <div class="grid grid-rows-[15%_50%_10%_25%] h-full">
             <!-- HEADER -->
             <div class="flex flex-row justify-center items-center border-b-3 bg-yellow-400 text-4xl text-center text-amber-950 font-bold"
@@ -20,13 +20,13 @@
                 <!-- Button Play to start a new game session -->
                 <div class="flex flex-row justify-center items-center h-full w-full" id="initial_start">
                     <button
-                        class="btn aspect-square rounded-full w-[50%] border border-2 bg-yellow-400 text-amber-950 text-5xl font-bold"
+                        class="btn aspect-square rounded-full w-[50%] border-2 bg-yellow-400 text-amber-950 text-5xl font-bold"
                         onclick="startGame()">PLAY</button>
                 </div>
                 <!-- In Game -->
                 <div class="grid grid-cols-2 divide-x-2 divide-dashed divide-black-500 bg-orange-100 h-full w-full hidden"
                     id="after_start_1">
-                    <div class="flex flex-col justify-around items-center w-full">
+                    <div class="flex flex-col justify-around items-center">
                         <div class="text-3xl text-amber-950 font-bold">YOU</div>
                         <div class="text-3xl text-amber-950 font-bold">
                             <div class="relative overflow-visible h-10">
@@ -36,7 +36,7 @@
                         </div>
                         <div class="flex justify-center items-center h-[10vh] w-full" id="screen_user"></div>
                     </div>
-                    <div class="flex flex-col justify-around items-center w-full">
+                    <div class="flex flex-col justify-around items-center">
                         <div class="text-3xl text-amber-950 font-bold">OPPONENT</div>
                         <div class="text-3xl text-amber-950 font-bold">
                             <div class="relative overflow-visible h-10">
@@ -64,7 +64,7 @@
                     <div class="h-[16vh] flex flex-row justify-evenly w-full">
                         <div class="flex flex-row justify-center items-center w-full">
                             <button
-                                class="btn aspect-square rounded-md border border-1 bg-purple-300 w-[65%] sm:w-[60%] flex justify-center items-center"
+                                class="btn aspect-square rounded-md border-1 bg-purple-300 w-[65%] sm:w-[60%] flex justify-center items-center"
                                 id="buttonUserFist" title="Rock" onclick="getChoice('fist')">
                                 <img class="w-[80%] h-[80%] rotate-90" src="assets/icons/hand-back-fist-regular.svg"
                                     alt="Rock">
@@ -72,14 +72,14 @@
                         </div>
                         <div class="flex flex-row justify-center items-center w-full">
                             <button
-                                class="btn aspect-square rounded-md border border-1 bg-purple-300 w-[65%] sm:w-[60%] flex justify-center items-center"
+                                class="btn aspect-square rounded-md border-1 bg-purple-300 w-[65%] sm:w-[60%] flex justify-center items-center"
                                 id="buttonUserPalm" title="Paper" onclick="getChoice('palm')">
                                 <img class="w-[80%] h-[80%] rotate-90" src="assets/icons/hand-regular.svg" alt="Paper">
                             </button>
                         </div>
                         <div class="flex flex-row justify-center items-center w-full">
                             <button
-                                class="btn aspect-square rounded-md border border-1 bg-purple-300 w-[65%] sm:w-[60%] flex justify-center items-center"
+                                class="btn aspect-square rounded-md border-1 bg-purple-300 w-[65%] sm:w-[60%] flex justify-center items-center"
                                 id="buttonUserScissors" title="Scissors" onclick="getChoice('scissors')">
                                 <img class="w-[80%] h-[80%] transform scale-x-[-1]" src="assets/icons/hand-scissors-regular.svg"
                                     alt="Scissors">
