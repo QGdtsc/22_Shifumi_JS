@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="h-screen max-w-md mx-auto bg-orange-100 border-[3px]">
+    <div class="h-screen max-w-md mx-auto bg-orange-100 border-[3px] overflow-x-hidden">
         <div class="grid grid-rows-[20%_50%_10%_20%] h-full">
             <!-- HEADER -->
             <div class="flex flex-row justify-center items-center border-b-3 bg-yellow-400 text-4xl text-center text-amber-950 font-bold"
@@ -36,7 +36,7 @@
                         </div>
                         <div class="flex justify-center items-center h-[10vh] w-full" id="screen_user"></div>
                     </div>
-                    <div class="flex flex-col justify-around items-center">
+                    <div class="flex flex-col justify-around items-center w-full">
                         <div class="text-3xl text-amber-950 font-bold">OPPONENT</div>
                         <div class="text-3xl text-amber-950 font-bold">
                             <div class="relative overflow-visible h-10">
@@ -44,7 +44,7 @@
                                 <span id="plus_one_opponent">+1</span>
                             </div>
                         </div>
-                        <div class="flex justify-center items-center h-[10vh]" id="screen_opponent"></div>
+                        <div class="flex justify-center items-center h-[10vh] w-full" id="screen_opponent"></div>
                     </div>
                 </div>
             </div>
@@ -64,16 +64,10 @@
                     <!-- Select next move -->
                     <div class="h-[13vh] flex flex-row justify-evenly w-full">
                         <div class="flex flex-row justify-center items-center w-full">
-                            <!-- <button
-                                class="btn border border-1 aspect-square rounded-md bg-purple-300 w-[60%] flex justify-center items-center"
-                                id="buttonUserFist" title="Rock" onclick="getChoice('fist')">
-                                <img class="w-4/5 h-4/5 rotate-90" src="assets/icons/hand-back-fist-regular.svg"
-                                    alt="Rock">
-                            </button> -->
                             <button
                                 class="btn border border-1 aspect-square rounded-md bg-purple-300 w-[70%] flex justify-center items-center"
                                 id="buttonUserFist" title="Rock" onclick="getChoice('fist')">
-                                <img class="w-[80%] h-[80%]" src="assets/icons/hand-back-fist-regular.svg"
+                                <img class="w-[80%] h-[80%] rotate-90" src="assets/icons/hand-back-fist-regular.svg"
                                     alt="Rock">
                             </button>
                         </div>
@@ -81,29 +75,16 @@
                             <button
                                 class="btn border border-1 aspect-square rounded-md bg-purple-300 w-[70%] flex justify-center items-center"
                                 id="buttonUserPalm" title="Paper" onclick="getChoice('palm')">
-                                <img class="w-[80%] h-[80%]" src="assets/icons/hand-regular.svg" alt="Paper">
+                                <img class="w-[80%] h-[80%] rotate-90" src="assets/icons/hand-regular.svg" alt="Paper">
                             </button>
-                            <!-- <button
-                                class="btn border border-1 aspect-square rounded-md bg-purple-300 w-[60%] flex justify-center items-center"
-                                id="buttonUserPalm" title="Paper" onclick="getChoice('palm')">
-                                <img class="w-4/5 h-4/5 rotate-90" src="assets/icons/hand-regular.svg" alt="Paper">
-                            </button> -->
                         </div>
                         <div class="flex flex-row justify-center items-center w-full">
                             <button
                                 class="btn border border-1 aspect-square rounded-md bg-purple-300 w-[70%] flex justify-center items-center"
                                 id="buttonUserScissors" title="Scissors" onclick="getChoice('scissors')">
-                                <img class="w-[80%] h-[80%]" src="assets/icons/hand-scissors-regular.svg"
+                                <img class="w-[80%] h-[80%] transform scale-x-[-1]" src="assets/icons/hand-scissors-regular.svg"
                                     alt="Scissors">
-                                <!-- <img class="w-4/5 h-4/5 transform scale-x-[-1]" src="assets/icons/hand-scissors-regular.svg"
-                                    alt="Scissors"> -->
                             </button>
-                            <!-- <button
-                                class="btn border border-1 aspect-square rounded-md bg-purple-300 w-[60%] flex justify-center items-center"
-                                id="buttonUserScissors" title="Scissors" onclick="getChoice('scissors')">
-                                <img class="w-4/5 h-4/5 transform scale-x-[-1]" src="assets/icons/hand-scissors-regular.svg"
-                                    alt="Scissors">
-                            </button> -->
                         </div>
                     </div>
                 </div>
