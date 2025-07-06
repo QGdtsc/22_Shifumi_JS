@@ -60,15 +60,15 @@ function getChoice(choice) {
     switch (userChoice) {
         case 'fist':
             // html_element = "<button class='btn border border-1 aspect-square rounded-md bg-purple-300 w-[70%] flex justify-center items-center'><img class='w-4/5 h-4/5' src='assets/icons/hand-back-fist-regular.svg' alt='Rock'></button>"
-            html_element = "<button class='btn border border-1 aspect-square rounded-md bg-purple-300 w-[70%] flex justify-center items-center'><img class='w-4/5 h-4/5 rotate-90' src='assets/icons/hand-back-fist-regular.svg' alt='Rock'></button>"
+            html_element = "<button class='btn border border-1 aspect-square rounded-md bg-purple-300 w-[58%] flex justify-center items-center'><img class='w-4/5 h-4/5 rotate-90' src='assets/icons/hand-back-fist-regular.svg' alt='Rock'></button>"
             break
         case 'palm':
             // html_element = "<button class='btn border border-1 aspect-square rounded-md bg-purple-300 w-[70%] flex justify-center items-center'><img class='w-4/5 h-4/5' src='assets/icons/hand-regular.svg' alt='Paper'></button>"
-            html_element = "<button class='btn border border-1 aspect-square rounded-md bg-purple-300 w-[70%] flex justify-center items-center'><img class='w-4/5 h-4/5 rotate-90' src='assets/icons/hand-regular.svg' alt='Paper'></button>"
+            html_element = "<button class='btn border border-1 aspect-square rounded-md bg-purple-300 w-[58%] flex justify-center items-center'><img class='w-4/5 h-4/5 rotate-90' src='assets/icons/hand-regular.svg' alt='Paper'></button>"
             break
         case "scissors":
             // html_element = "<button class='btn border border-1 aspect-square rounded-md bg-purple-300 w-[70%] flex justify-center items-center'><img class='w-4/5 h-4/5' src='assets/icons/hand-scissors-regular.svg' alt='Scissors'></button>"
-            html_element = "<button class='btn border border-1 aspect-square rounded-md bg-purple-300 w-[70%] flex justify-center items-center'><img class='w-4/5 h-4/5 transform scale-x-[-1]' src='assets/icons/hand-scissors-regular.svg' alt='Scissors'></button>"
+            html_element = "<button class='btn border border-1 aspect-square rounded-md bg-purple-300 w-[58%] flex justify-center items-center'><img class='w-4/5 h-4/5 transform scale-x-[-1]' src='assets/icons/hand-scissors-regular.svg' alt='Scissors'></button>"
             break
     }
     document.getElementById('screen_user').innerText = userChoice
@@ -126,17 +126,17 @@ function getRandomChoiceOpponent() {
         case 0:
             opponentChoice = "fist"
             // html_element = "<button class='btn border border-1 aspect-square rounded-md bg-red-300 w-[70%] flex justify-center items-center'><img class='w-4/5 h-4/5' src='assets/icons/hand-back-fist-regular.svg' alt='Rock'></button>"
-            html_element = "<button class='btn border border-1 aspect-square rounded-md bg-red-300 w-[70%] flex justify-center items-center'><img class='w-4/5 h-4/5 rotate-270 transform scale-x-[-1]' src='assets/icons/hand-back-fist-regular.svg' alt='Rock'></button>"
+            html_element = "<button class='btn border border-1 aspect-square rounded-md bg-red-300 w-[58%] flex justify-center items-center'><img class='w-4/5 h-4/5 rotate-270 transform scale-x-[-1]' src='assets/icons/hand-back-fist-regular.svg' alt='Rock'></button>"
             break
         case 1:
             opponentChoice = "palm"
             // html_element = "<button class='btn border border-1 aspect-square rounded-md bg-red-300 w-[70%] flex justify-center items-center'><img class='w-4/5 h-4/5' src='assets/icons/hand-regular.svg' alt='Paper'></button>"
-            html_element = "<button class='btn border border-1 aspect-square rounded-md bg-red-300 w-[70%] flex justify-center items-center'><img class='w-4/5 h-4/5 rotate-270 transform scale-x-[-1]' src='assets/icons/hand-regular.svg' alt='Paper'></button>"
+            html_element = "<button class='btn border border-1 aspect-square rounded-md bg-red-300 w-[58%] flex justify-center items-center'><img class='w-4/5 h-4/5 rotate-270 transform scale-x-[-1]' src='assets/icons/hand-regular.svg' alt='Paper'></button>"
             break
         case 2:
             opponentChoice = "scissors"
             // html_element = "<button class='btn border border-1 aspect-square rounded-md bg-red-300 w-[70%] flex justify-center items-center'><img class='w-4/5 h-4/5' src='assets/icons/hand-scissors-regular.svg' alt='Scissors'></button>"
-            html_element = "<button class='btn border border-1 aspect-square rounded-md bg-red-300 w-[70%] flex justify-center items-center'><img class='w-4/5 h-4/5' src='assets/icons/hand-scissors-regular.svg' alt='Scissors'></button>"
+            html_element = "<button class='btn border border-1 aspect-square rounded-md bg-red-300 w-[58%] flex justify-center items-center'><img class='w-4/5 h-4/5' src='assets/icons/hand-scissors-regular.svg' alt='Scissors'></button>"
             break
         default:
             break
